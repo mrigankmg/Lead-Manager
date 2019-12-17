@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Form extends Component {
   render() {
     return (
-      <h1> Add Lead Form. </h1>
+      <h1> Add Lead Form </h1>
     )
   }
 }
