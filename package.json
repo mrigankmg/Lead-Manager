@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development ./lead_manager/frontend/src/index.js --output ./lead_manager/frontend/static/frontend/main.js",
+    "dev": "webpack --mode development --watch ./lead_manager/frontend/src/index.js --output ./lead_manager/frontend/static/frontend/main.js",
     "build" : "webpack --mode production ./lead_manager/frontend/src/index.js --output ./lead_manager/frontend/static/frontend/main.js"
   },
   "repository": {
