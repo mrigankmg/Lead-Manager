@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { addLead } from '../../actions/leads'
 
-class Form extends Component {
+export class Form extends Component {
   state = {
     name: "",
     email: "",
@@ -21,6 +21,11 @@ class Form extends Component {
     const { name, email, message } = this.state
     const lead = { name, email, message }
     this.props.addLead(lead)
+    this.setState({
+      name: '',
+      email: '',
+      message: ''
+    })
   }
 
   render() {
