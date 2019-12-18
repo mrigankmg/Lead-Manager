@@ -1,4 +1,4 @@
-// import { GET_ERRORS } from '../actions/types'
+import { USER_LOADING, USER_LOADED, AUTH_ERROR } from '../actions/types'
 
 const initialState = {
   token: localStorage.getItem('token'),
@@ -9,11 +9,27 @@ const initialState = {
 
 export default function(state=initialState, action) {
   switch(action.type) {
-    // case GET_ERRORS:
-    //   return {
-    //     msg: action.payload.msg,
-    //     status: action.payload.status
-    //   }
+    case USER_LOADING:
+      return {
+        ...state,
+        isLoading: true
+      }
+    case USER_LOADING:
+      return {
+        ...state,
+        isLoading: false,
+        isAuthenticated: true,
+        user: action.payload
+      }
+    case AUTH_ERROR:
+      localStorage.removeItem('token')
+      return {
+        ...state,
+        token: null,
+        isLoading: false,
+        isAuthenticated: false,
+        user: null
+      }
     default:
       return state
   }
